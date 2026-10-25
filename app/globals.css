@@ -12,6 +12,8 @@
   --color-cocoa: #3b2b24;
   /* Softer cocoa for secondary text, still readable on blush and cream. */
   --color-cocoa-soft: #5e4d44;
+  /* Soft sage, only for the botanical drawings. */
+  --color-sage: #7d8c6c;
 
   --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
   /* Handwritten accent for little notes and labels. Use sparingly. */

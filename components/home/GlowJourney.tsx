@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Botanical } from "@/components/Botanical";
 
 const entries = [
   {
@@ -24,7 +25,8 @@ const entries = [
 export function GlowJourney() {
   return (
     <section className="relative overflow-hidden bg-oat" aria-labelledby="journey-title">
-      <div className="container-page py-20 md:py-28">
+      <Botanical plant="rice" className="pointer-events-none absolute top-6 right-[-1rem] h-56 rotate-[8deg] text-sage/70 md:right-[6%] md:h-80" />
+      <div className="container-page relative py-20 md:py-28">
         <p className="note">the 6-month glow journey</p>
         <h2 id="journey-title" className="heading-lg mt-2 max-w-lg">
           what to expect, honestly

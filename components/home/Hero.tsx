@@ -5,6 +5,7 @@ import Link from "next/link";
 import hero from "@/public/images/hero.jpg";
 import { useLaunch } from "@/lib/launch-context";
 import { GuaranteeBadge } from "@/components/GuaranteeBadge";
+import { Botanical } from "@/components/Botanical";
 
 /** Hand-drawn curvy arrow used next to handwritten notes. */
 export function Squiggle({ className = "" }: { className?: string }) {
@@ -44,6 +45,9 @@ export function Hero() {
           <Squiggle className="mt-6 h-9 w-14 shrink-0 md:h-11 md:w-16" />
         </p>
       </div>
+
+      {/* A rosemary sprig peeking in from the bottom corner. */}
+      <Botanical plant="rosemary" className="pointer-events-none absolute -bottom-6 left-3 hidden h-80 rotate-[14deg] text-sage/70 md:block" />
 
       <div className="container-page relative flex md:min-h-[min(84vh,780px)] md:items-center">
         <div className="max-w-[34rem] pt-8 pb-12 md:py-20">

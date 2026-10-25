@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
+import { Botanical } from "@/components/Botanical";
 import { site } from "@/config/site";
 
 const columns = [
@@ -66,8 +67,10 @@ export function Footer() {
         ))}
       </div>
       {/* Big wordmark across the bottom of the page. */}
-      <div className="container-page overflow-hidden pt-4" aria-hidden="true">
+      <div className="container-page relative overflow-hidden pt-4" aria-hidden="true">
         <Logo className="text-[27vw] leading-[0.8] md:text-[17rem]" />
+        {/* An argan branch resting next to the wordmark. */}
+        <Botanical plant="argan" className="absolute right-0 bottom-2 h-20 text-sage md:right-8 md:bottom-8 md:h-44" />
       </div>
       <div className="border-t border-latte/50">
         <p className="container-page py-5 text-xs text-cocoa-soft">

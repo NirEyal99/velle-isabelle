@@ -1,6 +1,6 @@
 import { Drop } from "@/components/Logo";
 
-const words = ["rosemary", "rice water", "peppermint", "no sulfates", "argan oil", "vegan", "camellia oil", "cruelty-free", "caffeine", "no silicones"];
+const words = ["rosemary", "peppermint", "rice water", "aloe vera", "argan oil", "no sulfates", "vegan", "cruelty-free", "no silicones"];
 
 /** Slowly scrolling strip of ingredients. Stays still for people who prefer reduced motion. */
 export function Marquee() {
