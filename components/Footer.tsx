@@ -33,11 +33,11 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="mt-auto bg-oat">
+    <footer className="mt-auto bg-cocoa text-cream">
       <div className="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
           <p className="max-w-xs text-lg">{site.tagline}</p>
-          <p className="mt-6 text-sm text-cocoa-soft">
+          <p className="mt-6 text-sm opacity-75">
             vegan · cruelty-free · no sulfates, parabens or silicones
           </p>
           <ul className="mt-6 flex gap-4 text-sm">
@@ -58,7 +58,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-[15px]">
               {col.links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="hover:text-clay-ink">{l.label}</Link>
+                  <Link href={l.href} className="opacity-85 hover:opacity-100">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -67,10 +67,10 @@ export function Footer() {
       </div>
       {/* Big wordmark across the bottom of the page. */}
       <div className="container-page relative overflow-hidden pt-4" aria-hidden="true">
-        <Logo className="text-[27vw] leading-[0.8] md:text-[17rem]" />
+        <Logo className="text-[27vw] leading-[0.8] !text-cream md:text-[17rem]" />
       </div>
-      <div className="border-t border-latte/50">
-        <p className="container-page py-5 text-xs text-cocoa-soft">
+      <div className="border-t border-cream/15">
+        <p className="container-page py-5 text-xs opacity-70">
           © {new Date().getFullYear()} velle. demo store: no real orders are placed and no payments are taken.
         </p>
       </div>

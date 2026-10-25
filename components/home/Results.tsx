@@ -15,7 +15,7 @@ export function Results() {
       </h2>
       {results.length === 0 && (
         <div className="mt-8 max-w-lg">
-          <p className="text-[17px] leading-relaxed text-cocoa-soft">
+          <p className="text-[17px] leading-relaxed">
             we just launched, so there are no reviews yet. when they come in, we&apos;ll only share real photos from real customers.
           </p>
           <Link href="/shop" className="btn-outline mt-7">

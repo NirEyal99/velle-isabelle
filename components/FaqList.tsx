@@ -7,7 +7,7 @@ export function FaqList({ limit }: { limit?: number }) {
     <div className="divide-y divide-latte/60 border-y border-latte/60">
       {items.map((f) => (
         <details key={f.q} className="group">
-          <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-lg font-medium [&::-webkit-details-marker]:hidden">
+          <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-lg font-semibold [&::-webkit-details-marker]:hidden">
             {f.q}
             <span aria-hidden="true" className="text-2xl font-light transition-transform group-open:rotate-45">
               +

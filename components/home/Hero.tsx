@@ -28,7 +28,7 @@ export function Hero() {
 
       <div className="container-page relative flex md:min-h-[min(84vh,780px)] md:items-center">
         <div className="max-w-[34rem] pt-8 pb-12 md:py-20">
-          {active && <p className="mb-5 text-[15px]">launch week · 25% off everything</p>}
+          {active && <p className="mb-5 inline-block rounded-full bg-cocoa px-4 py-1.5 text-sm font-semibold text-cream">launch week · 25% off everything</p>}
           <h1 id="hero-title" className="heading-xl">
             hair you <br className="hidden md:block" />
             can&apos;t stop <br className="hidden md:block" />

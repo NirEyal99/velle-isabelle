@@ -1,32 +1,51 @@
+import Image from "next/image";
 import Link from "next/link";
+import applying from "@/public/images/applying.jpg";
 
 const milestones = [
-  { month: "month 1", body: "you'll feel the tingle, and how clean your scalp is. hair is softer from the first wash." },
-  { month: "month 3", body: "visible shine, smoother ends and less breakage in your brush." },
-  { month: "month 6", body: "fuller-looking, bouncy hair, and a routine that's become a habit." },
+  { n: "1", body: "you feel the tingle, and how clean your scalp is. hair is softer from the first wash." },
+  { n: "3", body: "visible shine, smoother ends and less breakage in your brush." },
+  { n: "6", body: "fuller-looking, bouncy hair, and a routine that's become a habit." },
 ];
 
 export function GlowJourney() {
   return (
-    <section className="bg-oat" aria-labelledby="journey-title">
-      <div className="container-page py-20 md:py-32">
-        <p className="label">the 6-month glow journey</p>
-        <h2 id="journey-title" className="heading-lg mt-3 max-w-xl">
-          what to expect
-        </h2>
-        <ol className="mt-12 grid gap-10 md:grid-cols-3 md:gap-12">
-          {milestones.map((m) => (
-            <li key={m.month} className="border-t border-cocoa/20 pt-6">
-              <h3 className="text-xl font-medium">{m.month}</h3>
-              <p className="mt-2 text-cocoa-soft">{m.body}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-12 flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
-          <Link href="/#pricing" className="btn-primary self-start">
-            start your glow journey
-          </Link>
-          <p className="text-sm text-cocoa-soft">cosmetic results with regular use. everyone&apos;s hair is different.</p>
+    <section className="bg-clay text-cocoa-deep" aria-labelledby="journey-title">
+      <div className="container-page grid items-center gap-12 py-20 md:grid-cols-[1.2fr_1fr] md:gap-16 md:py-28">
+        <div>
+          <p className="label">the 6-month glow journey</p>
+          <h2 id="journey-title" className="heading-lg mt-3">
+            what to expect
+          </h2>
+          <ol className="mt-10 space-y-7">
+            {milestones.map((m) => (
+              <li key={m.n} className="flex items-start gap-6">
+                <span className="w-24 shrink-0 text-[4.5rem] leading-[0.8] font-extrabold tracking-[-0.06em] md:w-28 md:text-[5.5rem]" aria-hidden="true">
+                  {m.n}
+                </span>
+                <div>
+                  <h3 className="text-lg font-bold">month {m.n}</h3>
+                  <p className="mt-1">{m.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+            <Link href="/#pricing" className="btn-primary self-start">
+              start your glow journey
+            </Link>
+            <p className="text-sm">cosmetic results with regular use. everyone&apos;s hair is different.</p>
+          </div>
+        </div>
+        <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
+          <Image
+            src={applying}
+            alt="woman with a bob dropping velle scalp serum onto her parting"
+            fill
+            placeholder="blur"
+            sizes="(min-width: 768px) 45vw, 100vw"
+            className="object-cover"
+          />
         </div>
       </div>
     </section>

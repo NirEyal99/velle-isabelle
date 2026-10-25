@@ -10,6 +10,8 @@
   /* Darker clay for small text, so it stays readable (meets contrast guidelines). */
   --color-clay-ink: #8c5f4a;
   --color-cocoa: #3b2b24;
+  /* Deeper cocoa for text on the clay color band (keeps it easy to read). */
+  --color-cocoa-deep: #2a1e19;
   /* Softer cocoa for secondary text, still readable on blush and cream. */
   --color-cocoa-soft: #5e4d44;
   /* Soft sage, only for the botanical drawings. */
@@ -50,21 +52,25 @@ body {
   @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 text-[15px] font-medium transition-colors;
 }
 @utility btn-primary {
-  @apply btn bg-cocoa text-cream hover:bg-[#2a1e19];
+  @apply btn bg-cocoa text-cream hover:bg-cocoa-deep;
 }
 @utility btn-outline {
   @apply btn border border-cocoa text-cocoa hover:bg-cocoa hover:text-cream;
+}
+/* Light button for dark color bands. */
+@utility btn-light {
+  @apply btn bg-cream text-cocoa hover:bg-blush;
 }
 @utility container-page {
   @apply mx-auto w-full max-w-6xl px-5 md:px-8;
 }
 /* Small quiet label above headings. */
 @utility label {
-  @apply text-[15px] text-clay-ink;
+  @apply text-[15px] font-semibold;
 }
 @utility heading-xl {
-  @apply text-[2.9rem] leading-[0.98] font-medium tracking-[-0.035em] md:text-[5.2rem];
+  @apply text-[3.2rem] leading-[0.92] font-extrabold tracking-[-0.045em] md:text-[6rem];
 }
 @utility heading-lg {
-  @apply text-[2.1rem] leading-[1.05] font-medium tracking-[-0.03em] md:text-5xl;
+  @apply text-[2.4rem] leading-[0.98] font-extrabold tracking-[-0.04em] md:text-[3.6rem];
 }

@@ -20,7 +20,7 @@ export default function HomePage() {
       <Pricing />
       <Results />
       <QuizCta />
-      <section className="border-t border-latte/50" aria-labelledby="faq-title">
+      <section className="border-t border-cocoa/10" aria-labelledby="faq-title">
         <div className="container-page grid gap-8 py-16 md:grid-cols-[1fr_1.6fr] md:gap-16 md:py-24">
           <div>
             <p className="label">faq</p>

@@ -13,9 +13,9 @@ const plants: { plant: Plant; name: string; body: string }[] = [
 
 export function Ingredients() {
   return (
-    <section id="ingredients" className="container-page scroll-mt-20 py-20 md:py-32" aria-labelledby="ingredients-title">
-      <div className="grid items-center gap-12 md:grid-cols-2 md:gap-20">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+    <section id="ingredients" className="scroll-mt-20 bg-oat" aria-labelledby="ingredients-title">
+      <div className="container-page grid items-center gap-12 py-20 md:grid-cols-2 md:gap-20 md:py-28">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
           <Image
             src={ingredients}
             alt="flat-lay of fresh rosemary, mint leaves, a bowl of rice water, rice grains and golden oil drops on linen"
@@ -34,11 +34,11 @@ export function Ingredients() {
           <ul className="mt-8 divide-y divide-cocoa/10 border-y border-cocoa/10">
             {plants.map((p) => (
               <li key={p.plant} className="flex items-center gap-5 py-4">
-                <span className="grid size-16 shrink-0 place-items-center rounded-full bg-oat">
+                <span className="grid size-16 shrink-0 place-items-center rounded-full bg-cream">
                   <Botanical plant={p.plant} stroke={3.5} className="size-11 text-sage" />
                 </span>
                 <div>
-                  <h3 className="font-medium">{p.name}</h3>
+                  <h3 className="text-lg font-bold">{p.name}</h3>
                   <p className="text-[15px] text-cocoa-soft">{p.body}</p>
                 </div>
               </li>
