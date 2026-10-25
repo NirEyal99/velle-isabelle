@@ -8,6 +8,8 @@ import { CountdownBanner } from "@/components/CountdownBanner";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuizPopup } from "@/components/quiz/QuizPopup";
+import { CartProvider } from "@/lib/cart-context";
+import { CartDrawer } from "@/components/cart/CartDrawer";
 
 const figtree = Figtree({ subsets: ["latin"], variable: "--font-figtree", display: "swap" });
 
@@ -33,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           skip to content
         </a>
         <LaunchProvider initialActive={isLaunchActive(Date.now())}>
+          <CartProvider>
           <CountdownBanner />
           <Header />
           <main id="main" className="flex-1">
@@ -40,6 +43,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </main>
           <Footer />
           <QuizPopup />
+          <CartDrawer />
+          </CartProvider>
         </LaunchProvider>
       </body>
     </html>

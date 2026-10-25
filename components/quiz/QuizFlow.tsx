@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { plans } from "@/config/pricing";
 import { quizPopup } from "@/config/promotions";
@@ -8,6 +7,7 @@ import { quizQuestions, recommend } from "@/content/quiz";
 import { PlanPrice } from "@/components/Price";
 import { GuaranteeBadge } from "@/components/GuaranteeBadge";
 import { WelcomeSignupForm } from "@/components/WelcomeSignupForm";
+import { useCart } from "@/lib/cart-context";
 
 /**
  * The hair quiz: one question per screen, then a recommended plan and a
@@ -17,6 +17,7 @@ export function QuizFlow({ onFinish }: { onFinish?: () => void }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [revealed, setRevealed] = useState(false);
+  const cart = useCart();
 
   const total = quizQuestions.length;
 
@@ -73,9 +74,16 @@ export function QuizFlow({ onFinish }: { onFinish?: () => void }) {
         <div className="mt-2">
           <PlanPrice planId={planId} />
         </div>
-        <Link href={`/shop#${planId}`} onClick={onFinish} className="btn-primary mt-5 w-full">
+        <button
+          type="button"
+          onClick={() => {
+            onFinish?.();
+            cart.add({ kind: "plan", id: planId });
+          }}
+          className="btn-primary mt-5 w-full"
+        >
           {plan.cta}
-        </Link>
+        </button>
         <GuaranteeBadge className="mt-3" />
       </div>
 

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
+import { useCart } from "@/lib/cart-context";
 
 export const navLinks = [
   { href: "/shop", label: "shop" },
@@ -14,6 +15,8 @@ export const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const cart = useCart();
+  const count = cart.totals.itemCount;
 
   useEffect(() => {
     if (!open) return;
@@ -62,12 +65,17 @@ export function Header() {
               <path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" />
             </svg>
           </Link>
-          <Link href="/shop" className="-mr-2 grid size-11 place-items-center rounded-full" aria-label="bag">
+          <button type="button" onClick={cart.open} className="relative -mr-2 grid size-11 place-items-center rounded-full" aria-label={count ? `bag, ${count} item${count === 1 ? "" : "s"}` : "bag, empty"}>
             <svg viewBox="0 0 24 24" className="size-[22px]" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
               <path d="M5 8h14l-1 13H6L5 8Z" />
               <path d="M9 8V6a3 3 0 0 1 6 0v2" />
             </svg>
-          </Link>
+            {count > 0 && (
+              <span aria-hidden="true" className="absolute top-1 right-0.5 grid min-w-5 place-items-center rounded-full bg-cocoa px-1 text-[11px] leading-5 font-bold text-cream">
+                {count}
+              </span>
+            )}
+          </button>
         </div>
       </div>
 

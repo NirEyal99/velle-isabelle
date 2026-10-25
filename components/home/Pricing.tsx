@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { AddToCart } from "@/components/cart/AddToCart";
 import trialKit from "@/public/images/trial-kit.jpg";
 import trio from "@/public/images/trio.jpg";
 import gifts from "@/public/images/gifts.jpg";
@@ -40,7 +40,7 @@ export function Pricing() {
               <p className="mt-2 text-cocoa-soft">{ritual.tagline}</p>
               <div className="mt-5"><PlanPrice planId="ritual" /></div>
               <Includes id="ritual" />
-              <Link href="/shop#ritual" className="btn-primary mt-auto">{ritual.cta}</Link>
+              <AddToCart kind="plan" id="ritual" className="btn-primary mt-auto">{ritual.cta}</AddToCart>
               <GuaranteeBadge className="mt-3" />
             </div>
           </article>
@@ -57,7 +57,7 @@ export function Pricing() {
               <p className="mt-2 opacity-80">{glow.tagline}</p>
               <div className="mt-5"><PlanPrice planId="glow-journey" /></div>
               <Includes id="glow-journey" />
-              <Link href="/shop#glow-journey" className="btn mt-auto bg-cream text-cocoa hover:bg-blush">{glow.cta}</Link>
+              <AddToCart kind="plan" id="glow-journey" className="btn mt-auto bg-cream text-cocoa hover:bg-blush">{glow.cta}</AddToCart>
               <GuaranteeBadge className="mt-3 !text-cream/80" />
             </div>
           </article>
@@ -80,9 +80,9 @@ export function Pricing() {
                   <h4 id={`plan-${id}`} className="text-xl font-extrabold tracking-[-0.03em]">{plan.name}</h4>
                   <p className="text-sm text-cocoa-soft">{plan.tagline}</p>
                   <div className="mt-2 [&>div>p:first-child]:!text-2xl"><PlanPrice planId={id} /></div>
-                  <Link href={`/shop#${id}`} className="mt-2 self-start text-[15px] font-medium underline decoration-cocoa/40 underline-offset-4 hover:decoration-cocoa">
+                  <AddToCart kind="plan" id={id} className="mt-2 min-h-11 self-start text-[15px] font-semibold underline decoration-cocoa/40 underline-offset-4 hover:decoration-cocoa">
                     {plan.cta}
-                  </Link>
+                  </AddToCart>
                 </div>
               </article>
             );
