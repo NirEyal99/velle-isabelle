@@ -13,7 +13,7 @@ export function Price({ dollars, className = "" }: { dollars: number; className?
     <span className={className}>
       {active && now < was && (
         <>
-          <s className="mr-2 font-normal text-cocoa-soft">
+          <s className="mr-2 font-normal opacity-75">
             <span className="sr-only">was </span>
             {formatMoney(was)}
           </s>
@@ -37,7 +37,7 @@ export function PlanPrice({ planId }: { planId: PlanId }) {
         <p className="text-3xl font-medium">
           {first !== undefined ? (
             <>
-              <s className="mr-2 text-xl font-normal text-cocoa-soft">
+              <s className="mr-2 text-xl font-normal opacity-75">
                 <span className="sr-only">was </span>
                 {formatMoney(toCents(plan.price))}
               </s>
@@ -53,7 +53,7 @@ export function PlanPrice({ planId }: { planId: PlanId }) {
           )}
         </p>
         {first !== undefined && (
-          <p className="mt-1 text-sm text-cocoa-soft">
+          <p className="mt-1 text-sm opacity-75">
             {second !== undefined && <>then {formatMoney(second)} for month 2, </>}
             {formatMoney(toCents(plan.price))}/month after
           </p>
@@ -69,7 +69,7 @@ export function PlanPrice({ planId }: { planId: PlanId }) {
         <p className="text-3xl font-medium">
           <Price dollars={plan.price} className="[&_s]:text-xl" />
         </p>
-        <p className="mt-1 text-sm text-cocoa-soft">
+        <p className="mt-1 text-sm opacity-75">
           paid upfront · just {formatMoney(Math.round(total / plan.months))}/month
         </p>
       </div>

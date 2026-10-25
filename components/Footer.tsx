@@ -36,8 +36,7 @@ export function Footer() {
     <footer className="mt-auto bg-oat">
       <div className="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
-          <Logo className="text-4xl" />
-          <p className="mt-3 text-cocoa-soft">{site.tagline}</p>
+          <p className="max-w-xs text-lg">{site.tagline}</p>
           <p className="mt-6 text-sm text-cocoa-soft">
             vegan · cruelty-free · no sulfates, parabens or silicones
           </p>
@@ -55,7 +54,7 @@ export function Footer() {
         </div>
         {columns.map((col) => (
           <nav key={col.title} aria-label={col.title}>
-            <h2 className="eyebrow">{col.title}</h2>
+            <h2 className="font-hand text-[1.5rem] leading-none text-clay-ink">{col.title}</h2>
             <ul className="mt-4 space-y-2.5 text-[15px]">
               {col.links.map((l) => (
                 <li key={l.href}>
@@ -65,6 +64,10 @@ export function Footer() {
             </ul>
           </nav>
         ))}
+      </div>
+      {/* Big wordmark across the bottom of the page. */}
+      <div className="container-page overflow-hidden pt-4" aria-hidden="true">
+        <Logo className="text-[27vw] leading-[0.8] md:text-[17rem]" />
       </div>
       <div className="border-t border-latte/50">
         <p className="container-page py-5 text-xs text-cocoa-soft">

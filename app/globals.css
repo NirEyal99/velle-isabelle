@@ -14,6 +14,14 @@
   --color-cocoa-soft: #5e4d44;
 
   --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  /* Handwritten accent for little notes and labels. Use sparingly. */
+  --font-hand: var(--font-caveat), "Bradley Hand", cursive;
+
+  --animate-marquee: marquee 40s linear infinite;
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
 
 html {
@@ -56,12 +64,13 @@ body {
 @utility container-page {
   @apply mx-auto w-full max-w-6xl px-5 md:px-8;
 }
-@utility eyebrow {
-  @apply text-xs font-semibold tracking-[0.18em] text-clay-ink uppercase;
+/* Small handwritten label above headings. */
+@utility note {
+  @apply font-hand text-[1.45rem] leading-none text-clay-ink;
 }
 @utility heading-xl {
-  @apply text-[2.6rem] leading-[1.02] font-medium tracking-tight md:text-6xl;
+  @apply text-[2.9rem] leading-[0.98] font-medium tracking-[-0.035em] md:text-[5.2rem];
 }
 @utility heading-lg {
-  @apply text-3xl leading-tight font-medium tracking-tight md:text-[2.75rem];
+  @apply text-[2.1rem] leading-[1.05] font-medium tracking-[-0.03em] md:text-5xl;
 }

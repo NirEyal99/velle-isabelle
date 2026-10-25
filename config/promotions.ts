@@ -25,14 +25,14 @@ export const launch = {
    */
   subscriptionMonthsPercentOff: [25, 20],
 
-  bannerText: "launch week: 25% off everything",
+  bannerText: "it's launch week! 25% off everything",
 };
 
 export const welcomeGift = {
   /** Seconds before the welcome popup appears (it also appears if a visitor tries to leave). */
   popupDelaySeconds: 8,
   headline: "a little gift, just for you",
-  body: "join the velle list and get a free mini scalp serum with your first order.",
+  body: "leave your email and we'll tuck a free mini scalp serum into your first order.",
 };
 
 /** Free gifts added to the cart automatically once the order reaches each amount (after discounts). */

@@ -23,7 +23,6 @@ export function CountdownBanner() {
         <span className="font-medium">{launch.bannerText}</span>
         <span aria-hidden="true" className="hidden text-latte sm:inline">·</span>
         <span className="tabular-nums">
-          ends in{" "}
           {t ? (
             <>
               <span className="sr-only">
@@ -31,7 +30,8 @@ export function CountdownBanner() {
               </span>
               <span aria-hidden="true">
                 {t.d}d {pad(t.h)}h {pad(t.m)}m {pad(t.s)}s
-              </span>
+              </span>{" "}
+              left
             </>
           ) : (
             <span aria-hidden="true">–d ––h ––m ––s</span>
