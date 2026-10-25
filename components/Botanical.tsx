@@ -133,10 +133,10 @@ function argan() {
 
 const drawings = { rosemary, peppermint, rice, aloe, argan };
 
-export function Botanical({ plant, className = "" }: { plant: Plant; className?: string }) {
+export function Botanical({ plant, className = "", stroke = 1.5 }: { plant: Plant; className?: string; stroke?: number }) {
   const { viewBox, paths, fills } = drawings[plant]();
   return (
-    <svg viewBox={viewBox} className={className} fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+    <svg viewBox={viewBox} className={className} fill="none" stroke="currentColor" strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
       {paths.map((d, i) => (
         <path key={i} d={d} fill={d.endsWith("Z") ? "currentColor" : "none"} fillOpacity={0.12} />
       ))}

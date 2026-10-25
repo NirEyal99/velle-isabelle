@@ -63,7 +63,7 @@ export const plans = {
     tagline: "the full-size trio, every month.",
     includes: ["full-size scalp serum", "full-size shampoo", "full-size conditioner", "free shipping, always", "skip, pause or cancel anytime"],
     freeShipping: true,
-    badge: "our fave",
+    badge: null,
   },
   "glow-journey": {
     cta: "start glowing",

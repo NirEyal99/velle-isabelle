@@ -5,17 +5,6 @@ import Link from "next/link";
 import hero from "@/public/images/hero.jpg";
 import { useLaunch } from "@/lib/launch-context";
 import { GuaranteeBadge } from "@/components/GuaranteeBadge";
-import { Botanical } from "@/components/Botanical";
-
-/** Hand-drawn curvy arrow used next to handwritten notes. */
-export function Squiggle({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 80 50" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
-      <path d="M3 8c14-6 30-4 40 8s14 24 30 26" />
-      <path d="M64 35l9 7-10 4" />
-    </svg>
-  );
-}
 
 export function Hero() {
   const { active } = useLaunch();
@@ -35,42 +24,25 @@ export function Hero() {
           className="object-cover object-[50%_20%]"
         />
         <div className="absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-[#EAB6A6] to-transparent md:block" />
-        {/* Handwritten note pointing at the bottle. */}
-        <p className="absolute top-[62%] left-[5%] flex -rotate-6 items-start gap-1 font-hand text-[1.35rem] leading-tight text-cocoa md:top-[66%] md:left-[18%] md:text-[1.7rem]">
-          <span>
-            the serum
-            <br />
-            everyone&apos;s asking about
-          </span>
-          <Squiggle className="mt-6 h-9 w-14 shrink-0 md:h-11 md:w-16" />
-        </p>
       </div>
-
-      {/* A rosemary sprig peeking in from the bottom corner. */}
-      <Botanical plant="rosemary" className="pointer-events-none absolute -bottom-6 left-3 hidden h-80 rotate-[14deg] text-sage/70 md:block" />
 
       <div className="container-page relative flex md:min-h-[min(84vh,780px)] md:items-center">
         <div className="max-w-[34rem] pt-8 pb-12 md:py-20">
-          {active && (
-            <p className="note mb-4 inline-block -rotate-2 !text-cocoa">
-              launch week, everything&apos;s 25% off ✿
-            </p>
-          )}
+          {active && <p className="mb-5 text-[15px]">launch week · 25% off everything</p>}
           <h1 id="hero-title" className="heading-xl">
             hair you <br className="hidden md:block" />
             can&apos;t stop <br className="hidden md:block" />
             touching.
           </h1>
-          <p className="mt-6 max-w-[26rem] text-[17px] leading-relaxed">
-            it starts at your scalp with a cooling, minty serum and ends with soft, glossy hair you&apos;ll keep running your hands through.
+          <p className="mt-6 max-w-[25rem] text-[17px] leading-relaxed">
+            a cooling scalp serum, a gentle shampoo and a silky conditioner. soft, shiny hair in about five minutes a day.
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link href="/shop" className="btn-primary px-9">
               shop velle
             </Link>
-            <Link href="/quiz" className="group inline-flex min-h-12 items-center justify-center gap-1.5 text-[15px] font-medium underline decoration-cocoa/40 underline-offset-[6px] hover:decoration-cocoa">
-              or take the 60-sec hair quiz
-              <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+            <Link href="/quiz" className="inline-flex min-h-12 items-center justify-center text-[15px] underline decoration-cocoa/40 underline-offset-[6px] hover:decoration-cocoa">
+              or take the hair quiz
             </Link>
           </div>
           <GuaranteeBadge className="mt-6 !justify-start !text-cocoa" />
