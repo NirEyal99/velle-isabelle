@@ -7,8 +7,10 @@
 export const launch = {
   /**
    * When the launch sale ENDS. The countdown always counts down to this
-   * exact moment — it never restarts. After it, the banner disappears and
-   * prices go back to normal on their own.
+   * exact moment — it never restarts. After it, the banner and the
+   * "taken off in your cart" notes disappear on their own.
+   *
+   * Items always show their FULL price. The discount is taken off in the cart.
    *
    * Format: "YYYY-MM-DDTHH:MM:SS" followed by the time-zone offset.
    *   New York in winter = -05:00, New York in summer = -04:00
@@ -25,14 +27,27 @@ export const launch = {
    */
   subscriptionMonthsPercentOff: [25, 20],
 
-  bannerText: "it's launch week! 25% off everything",
+  bannerText: "launch week: 25% off everything, taken off in your cart",
 };
 
 export const welcomeGift = {
-  /** Seconds before the welcome popup appears (it also appears if a visitor tries to leave). */
-  popupDelaySeconds: 8,
   headline: "a little gift, just for you",
   body: "leave your email and we'll tuck a free mini scalp serum into your first order.",
+};
+
+/**
+ * The hair-quiz popup. It appears once per visitor, after a few seconds or
+ * when they go to leave, and ends with a mystery gift.
+ * The gift is claimed with an email, the same way as the welcome gift above,
+ * so each customer gets it once.
+ */
+export const quizPopup = {
+  delaySeconds: 8,
+  headline: "free hair quiz, with a mystery gift at the end",
+  body: "5 quick questions, about 60 seconds. find your perfect ritual, then unwrap your gift.",
+  /** What the mystery gift turns out to be (shown when it's revealed). */
+  prize: "a free mini scalp serum",
+  prizeDetail: "leave your email and we'll tuck it into your first order.",
 };
 
 /** Free gifts added to the cart automatically once the order reaches each amount (after discounts). */

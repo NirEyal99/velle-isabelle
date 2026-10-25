@@ -1,85 +1,63 @@
 "use client";
 
 import { plans, type PlanId } from "@/config/pricing";
+import { launch } from "@/config/promotions";
 import { useLaunch } from "@/lib/launch-context";
-import { formatMoney, salePrice, subscriptionIntroPrices, toCents } from "@/lib/pricing";
+import { formatMoney, toCents } from "@/lib/pricing";
 
-/** A price that shows the launch discount (with the old price crossed out) while the sale is on. */
+/**
+ * A regular price. Items always show their full price; the launch discount is
+ * taken off in the cart, not on each item.
+ */
 export function Price({ dollars, className = "" }: { dollars: number; className?: string }) {
-  const { active } = useLaunch();
-  const now = salePrice(dollars, active);
-  const was = toCents(dollars);
-  return (
-    <span className={className}>
-      {active && now < was && (
-        <>
-          <s className="mr-2 font-normal opacity-75">
-            <span className="sr-only">was </span>
-            {formatMoney(was)}
-          </s>
-          <span className="sr-only">now </span>
-        </>
-      )}
-      {formatMoney(now)}
-    </span>
-  );
+  return <span className={className}>{formatMoney(toCents(dollars))}</span>;
 }
 
-/** Full price block for a plan card, including per-month and intro-offer lines. */
-export function PlanPrice({ planId }: { planId: PlanId }) {
+/** Small note under a price while the launch sale is on, saying the discount comes off in the cart. */
+export function LaunchNote({ planId, className = "" }: { planId?: PlanId; className?: string }) {
   const { active } = useLaunch();
+  if (!active) return null;
+  const [m1, m2] = launch.subscriptionMonthsPercentOff;
+  const text =
+    planId && plans[planId].kind === "subscription"
+      ? `launch week: ${m1}% off month 1${m2 ? ` and ${m2}% off month 2` : ""}, taken off in your cart`
+      : `launch week: ${launch.percentOff}% off, taken off in your cart`;
+  return <p className={`launch-note mt-3 inline-block rounded-full bg-current/10 px-3 py-1 text-[13px] font-semibold ${className}`}>{text}</p>;
+}
+
+/** Full price block for a plan card: the regular price, plus the launch note while the sale is on. */
+export function PlanPrice({ planId }: { planId: PlanId }) {
   const plan = plans[planId];
+  const cents = toCents(plan.price);
 
+  let price: React.ReactNode;
   if (plan.kind === "subscription") {
-    const [first, second] = subscriptionIntroPrices(plan.price, active);
-    return (
-      <div>
-        <p className="text-3xl font-medium">
-          {first !== undefined ? (
-            <>
-              <s className="mr-2 text-xl font-normal opacity-75">
-                <span className="sr-only">was </span>
-                {formatMoney(toCents(plan.price))}
-              </s>
-              <span className="sr-only">now </span>
-              {formatMoney(first)}
-              <span className="text-base font-normal"> first month</span>
-            </>
-          ) : (
-            <>
-              {formatMoney(toCents(plan.price))}
-              <span className="text-base font-normal">/month</span>
-            </>
-          )}
-        </p>
-        {first !== undefined && (
-          <p className="mt-1 text-sm opacity-75">
-            {second !== undefined && <>then {formatMoney(second)} for month 2, </>}
-            {formatMoney(toCents(plan.price))}/month after
-          </p>
-        )}
-      </div>
+    price = (
+      <p className="text-3xl font-medium">
+        {formatMoney(cents)}
+        <span className="text-base font-normal">/month</span>
+      </p>
     );
-  }
-
-  if (plan.kind === "prepaid") {
-    const total = salePrice(plan.price, active);
-    return (
-      <div>
-        <p className="text-3xl font-medium">
-          <Price dollars={plan.price} className="[&_s]:text-xl" />
-        </p>
-        <p className="mt-1 text-sm opacity-75">
-          paid upfront · just {formatMoney(Math.round(total / plan.months))}/month
-        </p>
-      </div>
+  } else if (plan.kind === "prepaid") {
+    price = (
+      <>
+        <p className="text-3xl font-medium">{formatMoney(cents)}</p>
+        <p className="mt-1 text-sm opacity-75">paid upfront · just {formatMoney(Math.round(cents / plan.months))}/month</p>
+      </>
+    );
+  } else {
+    price = (
+      <p className="text-3xl font-medium">
+        {formatMoney(cents)}
+        <span className="text-base font-normal"> one-time</span>
+      </p>
     );
   }
 
   return (
-    <p className="text-3xl font-medium">
-      <Price dollars={plan.price} className="[&_s]:text-xl" />
-      <span className="text-base font-normal"> one-time</span>
-    </p>
+    <div>
+      {price}
+      <LaunchNote planId={planId} />
+    </div>
   );
 }

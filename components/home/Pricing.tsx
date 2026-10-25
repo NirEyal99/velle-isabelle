@@ -79,7 +79,7 @@ export function Pricing() {
                 <div className="flex min-w-0 flex-1 flex-col justify-center">
                   <h4 id={`plan-${id}`} className="text-xl font-extrabold tracking-[-0.03em]">{plan.name}</h4>
                   <p className="text-sm text-cocoa-soft">{plan.tagline}</p>
-                  <div className="mt-2 [&_p]:!text-2xl"><PlanPrice planId={id} /></div>
+                  <div className="mt-2 [&>div>p:first-child]:!text-2xl"><PlanPrice planId={id} /></div>
                   <Link href={`/shop#${id}`} className="mt-2 self-start text-[15px] font-medium underline decoration-cocoa/40 underline-offset-4 hover:decoration-cocoa">
                     {plan.cta}
                   </Link>

@@ -1,6 +1,7 @@
 /**
- * The four things velle stands for. Cosmetic language only: "length" is about
- * less breakage and keeping length, never about growing hair.
+ * The four things velle stands for. Cosmetic language only: "growth goals" is
+ * about the customer growing her hair while velle cuts breakage so she keeps
+ * the length. Never say the products make hair grow.
  */
 const pillars = [
   {
@@ -9,18 +10,18 @@ const pillars = [
     tile: "bg-cocoa text-cream",
   },
   {
-    title: "incredible texture",
-    body: "soft, smooth, touchable strands. less frizz, more definition, every single wash.",
+    title: "texture & flow",
+    body: "soft, smooth, touchable strands with real slip. hair that swings when you walk and falls right back into place.",
     tile: "bg-blush",
   },
   {
-    title: "flow",
-    body: "slip and movement. hair that swings when you walk and falls right back into place.",
+    title: "the look",
+    body: "glossy, fuller-looking hair with visible shine from roots to ends.",
     tile: "bg-latte",
   },
   {
-    title: "the look",
-    body: "glossy, fuller-looking hair with visible shine, and less breakage so you keep your length.",
+    title: "growth goals",
+    body: "growing it out? velle keeps your scalp feeling its best and your strands conditioned, so less breaks off and you keep the length you grow.",
     tile: "bg-clay text-cocoa-deep",
   },
 ];

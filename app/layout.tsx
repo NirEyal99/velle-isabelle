@@ -7,6 +7,7 @@ import { isLaunchActive } from "@/lib/pricing";
 import { CountdownBanner } from "@/components/CountdownBanner";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { QuizPopup } from "@/components/quiz/QuizPopup";
 
 const figtree = Figtree({ subsets: ["latin"], variable: "--font-figtree", display: "swap" });
 
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
           <Footer />
+          <QuizPopup />
         </LaunchProvider>
       </body>
     </html>

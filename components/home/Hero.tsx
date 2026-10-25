@@ -28,14 +28,14 @@ export function Hero() {
 
       <div className="container-page relative flex md:min-h-[min(84vh,780px)] md:items-center">
         <div className="max-w-[34rem] pt-8 pb-12 md:py-20">
-          {active && <p className="mb-5 inline-block rounded-full bg-cocoa px-4 py-1.5 text-sm font-semibold text-cream">launch week · 25% off everything</p>}
+          {active && <p className="mb-5 inline-block rounded-full bg-cocoa px-4 py-1.5 text-sm font-semibold text-cream">launch week · 25% off in your cart</p>}
           <h1 id="hero-title" className="heading-xl">
             hair you <br className="hidden md:block" />
             can&apos;t stop <br className="hidden md:block" />
             touching.
           </h1>
           <p className="mt-6 max-w-[25rem] text-[17px] leading-relaxed">
-            elite, scalp-first hair care for healthier-feeling hair with incredible texture, flow and shine. about five minutes a day.
+            elite, scalp-first hair care for healthy-feeling hair, incredible texture and flow, and the length you&apos;ve been growing out.
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link href="/shop" className="btn-primary px-9">
