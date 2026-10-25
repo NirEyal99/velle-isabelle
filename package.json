@@ -10,7 +10,8 @@
     "test:cart": "node --experimental-strip-types --no-warnings --import ./scripts/register-alias.mjs lib/cart-math.test.mts",
     "test:subscriptions": "node --experimental-strip-types --no-warnings --import ./scripts/register-alias.mjs lib/subscription.test.mts",
     "test": "npm run -s test:cart && npm run -s test:subscriptions && npm run -s test:payments",
-    "test:payments": "node --experimental-strip-types --no-warnings --import ./scripts/register-alias.mjs lib/payments/demo.test.mts"
+    "test:payments": "node --experimental-strip-types --no-warnings --import ./scripts/register-alias.mjs lib/payments/demo.test.mts",
+    "preview:build": "next build && node preview/build.mjs"
   },
   "dependencies": {
     "next": "16.4.3",
@@ -22,6 +23,7 @@
     "@types/node": "22.18.0",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "esbuild": "^0.25.10",
     "tailwindcss": "4.1.13",
     "typescript": "5.9.3"
   }

@@ -28,6 +28,10 @@ To take real payments later, see [STRIPE.md](STRIPE.md).
 
 `npm test` checks every price rule (launch discount, free gifts, free shipping, the serum suggestion), the subscription rules (intro prices, skip, pause, resume, cancel) and the demo test cards. Run it after changing prices or promotions.
 
+## Updating the live preview link
+
+`npm run preview:build` packages the whole site into one file (`preview/dist/velle.html`) for the shareable preview link.
+
 ## Deploying
 
 Import this repository into [Vercel](https://vercel.com/new). No settings are needed.
