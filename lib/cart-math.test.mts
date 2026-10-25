@@ -72,16 +72,24 @@ const cart = (...items: CartItem[]) => items;
   assert.equal(t.giftProgress, 1);
 }
 
-// Gifts use the price AFTER the discount: $65 full set → $48.75, so no scrunchie yet.
+// Gifts use the price AFTER the discount: $78 full set → $58.50, so no scrunchie yet (needs $60),
+// but it's over $50, so shipping is free.
 {
   const t = computeCart(cart({ kind: "plan", id: "full-set", qty: 1 }), on);
-  assert.equal(t.afterDiscountCents, 4875);
+  assert.equal(t.afterDiscountCents, 5850);
   assert.equal(t.freeGifts.length, 0);
-  assert.equal(t.shippingCents, 595);
-  // Without the launch it's $65: scrunchie + free shipping.
+  assert.equal(t.shippingCents, 0);
+  assert.equal(t.nextGift?.awayCents, 150);
+  // Without the launch it's $78: scrunchie + free shipping.
   const after = computeCart(cart({ kind: "plan", id: "full-set", qty: 1 }), off);
   assert.deepEqual(after.freeGifts.map((g) => g.id), ["scrunchie"]);
   assert.equal(after.shippingCents, 0);
+}
+
+// Trial kit: $39 → $29.25 during launch, under $50 so it pays shipping.
+{
+  const t = computeCart(cart({ kind: "plan", id: "trial-kit", qty: 1 }), on);
+  assert.equal(t.totalCents, 2925 + 595);
 }
 
 // Welcome gift is added once there's something in the cart.
