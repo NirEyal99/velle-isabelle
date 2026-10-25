@@ -34,7 +34,7 @@ export default function ShippingReturnsPage() {
         The Ritual ships once a month, on the same date as your first order. we&apos;ll email you a reminder 3 days before each delivery, so there&apos;s always time to skip, pause or cancel from{" "}
         <Link href="/account">your account</Link>. changes made before your delivery date apply to that delivery.
       </p>
-      <p>the 6-Month Glow Journey ships your first trio, silk pillowcase and travel kit right away, then one full-size trio every month for the next five months.</p>
+      <p>the 6-Month Glow Journey ships your first trio, silk pillowcase, satin scrunchie and scalp massager right away, then one full-size trio every month for the next five months.</p>
 
       <h2>our money-back guarantee</h2>
       <p>{guarantee.long}</p>

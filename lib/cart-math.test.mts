@@ -63,11 +63,13 @@ const cart = (...items: CartItem[]) => items;
   assert.match(t.lines[0].note ?? "", /month 2: 20% off/);
 }
 
-// 6-month plan during launch: $279 − 25% = $209.25 → over $100, both gifts, free shipping.
+// 6-month plan during launch: $279 − 25% = $209.25, free shipping. It includes the pillowcase,
+// scrunchie and massager; the $60/$100 threshold gifts don't add a second scrunchie or massager.
 {
   const t = computeCart(cart({ kind: "plan", id: "glow-journey", qty: 1 }), on);
   assert.equal(t.totalCents, 20925);
-  assert.deepEqual(t.freeGifts.map((g) => g.id), ["scrunchie", "massager"]);
+  assert.deepEqual(t.freeGifts.map((g) => g.id), ["pillowcase", "scrunchie", "massager"]);
+  assert.match(t.freeGifts[0].reason, /6-Month Glow Journey/);
   assert.equal(t.nextGift, null);
   assert.equal(t.giftProgress, 1);
 }

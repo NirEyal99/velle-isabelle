@@ -79,7 +79,7 @@ export function computeCart(items: CartItem[], opts: { launchActive: boolean; we
         note = launchActive && m2 ? `month 2: ${m2}% off, then full price. skip, pause or cancel anytime.` : "billed monthly. skip, pause or cancel anytime.";
       } else {
         discountCents = launchActive ? lineCents - applyPercentOff(lineCents, launch.percentOff) : 0;
-        if (plan.kind === "prepaid") note = `${plan.months} months, paid once. free pillowcase and travel kit included.`;
+        if (plan.kind === "prepaid") note = `${plan.months} months, paid once. free pillowcase, scrunchie and scalp massager included.`;
       }
       return { key: lineKey(item), kind: item.kind, id: item.id, name: plan.name, qty: item.qty, unitCents, lineCents, discountCents, note, maxQty: 1 };
     });
@@ -92,10 +92,19 @@ export function computeCart(items: CartItem[], opts: { launchActive: boolean; we
   const shippingCents =
     lines.length === 0 || hasSubscription || afterDiscountCents >= toCents(freeShippingMinimum) ? 0 : toCents(standardShipping);
 
-  // Free gifts: threshold gifts (based on the price after discount) and the welcome gift.
+  // Free gifts: gifts included with a plan, threshold gifts (based on the price after
+  // discount) and the welcome gift. Each gift is listed once, even if two offers include it.
   const freeGifts: GiftLine[] = [];
+  const included = (id: GiftId) => freeGifts.some((f) => f.id === id);
+  for (const l of lines) {
+    if (l.kind !== "plan") continue;
+    const plan = plans[l.id as PlanId];
+    for (const id of "gifts" in plan ? plan.gifts : []) {
+      if (!included(id)) freeGifts.push({ ...gifts[id], reason: `included with the ${plan.name}` });
+    }
+  }
   for (const g of cartGifts) {
-    if (lines.length && afterDiscountCents >= toCents(g.minimum)) {
+    if (lines.length && afterDiscountCents >= toCents(g.minimum) && !included(g.giftId)) {
       freeGifts.push({ ...gifts[g.giftId], reason: `free on orders $${g.minimum}+` });
     }
   }

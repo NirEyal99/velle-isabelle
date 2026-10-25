@@ -48,7 +48,7 @@ export default function TermsPage() {
 
       <h2>5. the 6-Month Glow Journey</h2>
       <p>
-        the 6-Month Glow Journey is paid once, upfront, and includes six monthly deliveries of the full-size trio plus a free silk pillowcase and travel kit. it does not renew automatically. if you change your mind before your second delivery ships, we&apos;ll refund the deliveries you haven&apos;t received.
+        the 6-Month Glow Journey is paid once, upfront, and includes six monthly deliveries of the full-size trio plus a free silk pillowcase, satin scrunchie and scalp massager. it does not renew automatically. if you change your mind before your second delivery ships, we&apos;ll refund the deliveries you haven&apos;t received.
       </p>
 
       <h2>6. our money-back guarantee</h2>

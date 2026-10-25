@@ -22,7 +22,7 @@ export const faqs = [
   },
   {
     q: "what's the 6-month glow journey?",
-    a: "it's six months of the ritual, paid once, so each month costs less. it also comes with a free silk pillowcase and a travel kit.",
+    a: "it's six months of the ritual, paid once, so each month costs less. it also comes with a free silk pillowcase, satin scrunchie and scalp massager.",
   },
   {
     q: "what if it's not for me?",

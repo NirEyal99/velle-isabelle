@@ -10,7 +10,7 @@
 
 export type ProductId = "serum" | "shampoo" | "conditioner";
 export type PlanId = "trial-kit" | "ritual" | "glow-journey" | "full-set";
-export type GiftId = "mini-serum" | "scrunchie" | "massager" | "pillowcase" | "travel-kit";
+export type GiftId = "mini-serum" | "scrunchie" | "massager" | "pillowcase";
 
 /** The three individual products. */
 export const products = {
@@ -73,7 +73,9 @@ export const plans = {
     price: 279,
     months: 6,
     tagline: "six months of the ritual, paid once.",
-    includes: ["6 months of the full-size trio", "free silk pillowcase", "free travel kit", "free shipping, always"],
+    includes: ["6 months of the full-size trio", "free silk pillowcase", "free satin scrunchie", "free scalp massager", "free shipping, always"],
+    /** Gifts that come with this plan (shown free in the cart). */
+    gifts: ["pillowcase", "scrunchie", "massager"],
     freeShipping: true,
     badge: "best value",
   },
@@ -96,7 +98,6 @@ export const gifts: Record<GiftId, { id: GiftId; name: string; worth: number }> 
   scrunchie: { id: "scrunchie", name: "Satin Scrunchie", worth: 12 },
   massager: { id: "massager", name: "Scalp Massager", worth: 18 },
   pillowcase: { id: "pillowcase", name: "Silk Pillowcase", worth: 45 },
-  "travel-kit": { id: "travel-kit", name: "Travel Kit", worth: 20 },
 };
 
 /** Standard shipping price for one-time orders under the free-shipping minimum. */
