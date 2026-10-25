@@ -11,19 +11,19 @@ export function Hero() {
 
   return (
     // The background matches the photo's pink wall so the two blend together.
-    <section className="relative overflow-hidden bg-[#EAB6A6]" aria-labelledby="hero-title">
+    <section className="relative overflow-hidden bg-[#EDB6A9]" aria-labelledby="hero-title">
       {/* Phones: photo on top. Larger screens: photo fills the right side, text sits in the empty space on the left. */}
       <div className="relative aspect-[1199/1150] w-full md:absolute md:inset-y-0 md:right-0 md:aspect-auto md:w-[64%] lg:w-[60%]">
         <Image
           src={hero}
-          alt="smiling woman with a glossy brown bob holding a bottle of velle scalp serum"
+          alt="smiling woman with long, glossy brown waves holding a bottle of velle scalp serum"
           fill
           priority
           placeholder="blur"
           sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw"
           className="object-cover object-[50%_20%]"
         />
-        <div className="absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-[#EAB6A6] to-transparent md:block" />
+        <div className="absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-[#EDB6A9] to-transparent md:block" />
       </div>
 
       <div className="container-page relative flex md:min-h-[min(84vh,780px)] md:items-center">

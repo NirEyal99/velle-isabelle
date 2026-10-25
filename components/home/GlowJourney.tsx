@@ -31,7 +31,7 @@ export function GlowJourney() {
             ))}
           </ol>
           <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
-            <Link href="/#pricing" className="btn-primary self-start">
+            <Link href="/#pricing" className="btn-primary self-start whitespace-nowrap">
               start your glow journey
             </Link>
             <p className="text-sm">cosmetic results with regular use. everyone&apos;s hair is different.</p>
@@ -40,7 +40,7 @@ export function GlowJourney() {
         <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
           <Image
             src={applying}
-            alt="woman with a bob dropping velle scalp serum onto her parting"
+            alt="woman with long, glossy brown waves dropping velle scalp serum onto her parting"
             fill
             placeholder="blur"
             sizes="(min-width: 768px) 45vw, 100vw"
