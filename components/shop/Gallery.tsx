@@ -21,7 +21,7 @@ export function Gallery({ images }: { images: { src: StaticImageData; alt: strin
               aria-label={`show photo ${i + 1}: ${img.alt}`}
               className="relative block aspect-square w-full overflow-hidden rounded-2xl ring-cocoa ring-offset-2 ring-offset-cream aria-pressed:ring-2"
             >
-              <Image src={img.src} alt="" fill sizes="(min-width: 768px) 15vw, 30vw" className="object-cover" />
+              <Image src={img.src} alt="" fill sizes="(min-width: 768px) 15vw, 30vw" className="object-cover object-[50%_39%]" />
             </button>
           </li>
         ))}

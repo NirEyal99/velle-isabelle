@@ -78,7 +78,7 @@ export function CartDrawer() {
                   return (
                     <li key={l.key} className="flex gap-4 py-4">
                       <div className="relative size-20 shrink-0 overflow-hidden rounded-xl bg-oat">
-                        <Image src={img.src} alt={img.alt} fill sizes="80px" className="object-cover" />
+                        <Image src={img.src} alt={img.alt} fill sizes="80px" className="object-cover" style={{ objectPosition: img.focus }} />
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-start justify-between gap-3">
@@ -124,7 +124,7 @@ export function CartDrawer() {
               {t.suggestSerum && (
                 <div className="mt-2 flex items-center gap-4 rounded-2xl bg-oat p-4">
                   <div className="relative size-16 shrink-0 overflow-hidden rounded-xl">
-                    <Image src={itemImages.serum.src} alt="" fill sizes="64px" className="object-cover" />
+                    <Image src={itemImages.serum.src} alt="" fill sizes="64px" className="object-cover" style={{ objectPosition: itemImages.serum.focus }} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-bold">complete your ritual</p>

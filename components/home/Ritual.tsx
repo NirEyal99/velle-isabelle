@@ -46,14 +46,14 @@ export function Ritual() {
         {steps.map((s, i) => (
           <li key={s.title}>
             <Link href={s.href} className={`group flex h-full flex-col rounded-[2rem] p-4 pb-7 ${s.tile}`}>
-              <div className="relative aspect-square overflow-hidden rounded-[1.5rem]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
                 <Image
                   src={s.img}
                   alt={s.alt}
                   fill
                   placeholder="blur"
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover object-[50%_60%] transition-transform duration-700 group-hover:scale-[1.04]"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
               </div>
               <div className="px-3 pt-6">

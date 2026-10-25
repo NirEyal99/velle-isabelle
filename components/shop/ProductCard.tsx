@@ -13,8 +13,8 @@ export function ProductCard({ id, tile = "bg-blush" }: { id: ProductId; tile?: s
   return (
     <article className={`flex flex-col rounded-[2rem] p-4 pb-6 ${tile}`} aria-labelledby={`product-${id}`}>
       <Link href={`/products/${id}`} className="group block">
-        <div className="relative aspect-square overflow-hidden rounded-[1.5rem]">
-          <Image src={d.image} alt={d.imageAlt} fill placeholder="blur" sizes="(min-width: 768px) 33vw, 100vw" className="object-cover object-[50%_60%] transition-transform duration-700 group-hover:scale-[1.04]" />
+        <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
+          <Image src={d.image} alt={d.imageAlt} fill placeholder="blur" sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
         </div>
         <h3 id={`product-${id}`} className="mt-5 px-2 text-[1.7rem] leading-none font-extrabold tracking-[-0.04em]">
           {p.name.toLowerCase()}

@@ -13,9 +13,9 @@ import gifts from "@/public/images/gifts.jpg";
  * chosen so the full bottles, including pump and dropper tops, always show.
  */
 export const itemImages: Record<ProductId | PlanId, { src: StaticImageData; alt: string; focus?: string }> = {
-  serum: { src: serum, alt: "velle scalp serum dropper bottle" },
-  shampoo: { src: shampoo, alt: "velle hydrating shampoo pump bottle" },
-  conditioner: { src: conditioner, alt: "velle nourishing conditioner tube" },
+  serum: { src: serum, alt: "velle scalp serum dropper bottle", focus: "50% 39%" },
+  shampoo: { src: shampoo, alt: "velle hydrating shampoo pump bottle", focus: "50% 39%" },
+  conditioner: { src: conditioner, alt: "velle nourishing conditioner tube", focus: "50% 39%" },
   "trial-kit": { src: trialKit, alt: "velle trial kit: mini serum, shampoo and conditioner in a satin-lined box", focus: "50% 40%" },
   ritual: { src: trio, alt: "full-size velle scalp serum, hydrating shampoo and nourishing conditioner", focus: "50% 46%" },
   "glow-journey": { src: gifts, alt: "silk pillowcase, satin scrunchie and scalp massager in blush pink", focus: "50% 70%" },

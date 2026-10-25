@@ -17,7 +17,7 @@ export function OrderSummary({ totals: t }: { totals: CartTotals }) {
           return (
             <li key={l.key} className="flex gap-4 py-3">
               <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-oat">
-                <Image src={img.src} alt={img.alt} fill sizes="64px" className="object-cover" />
+                <Image src={img.src} alt={img.alt} fill sizes="64px" className="object-cover" style={{ objectPosition: img.focus }} />
                 <span className="absolute top-1 right-1 grid size-5 place-items-center rounded-full bg-cocoa text-[11px] font-bold text-cream" aria-label={`quantity ${l.qty}`}>
                   {l.qty}
                 </span>
