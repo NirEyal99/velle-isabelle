@@ -35,7 +35,7 @@ export const products = {
 } as const satisfies Record<ProductId, { id: ProductId; name: string; price: number; size: string }>;
 
 /**
- * Plans and sets.
+ * Plans and sets. `cta` is the text on the plan's button.
  * kind:
  *   "one-time"     – paid once
  *   "subscription" – charged every month until skipped, paused or cancelled
@@ -43,6 +43,7 @@ export const products = {
  */
 export const plans = {
   "trial-kit": {
+    cta: "get the trial kit",
     id: "trial-kit",
     name: "Trial Kit",
     kind: "one-time",
@@ -53,6 +54,7 @@ export const plans = {
     badge: null,
   },
   ritual: {
+    cta: "start the ritual",
     id: "ritual",
     name: "The Ritual",
     kind: "subscription",
@@ -64,6 +66,7 @@ export const plans = {
     badge: "most loved",
   },
   "glow-journey": {
+    cta: "start glowing",
     id: "glow-journey",
     name: "6-Month Glow Journey",
     kind: "prepaid",
@@ -75,6 +78,7 @@ export const plans = {
     badge: "best value",
   },
   "full-set": {
+    cta: "get the full set",
     id: "full-set",
     name: "Full Set",
     kind: "one-time",

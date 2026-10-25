@@ -57,8 +57,8 @@ export function Pricing() {
                       </li>
                     ))}
                   </ul>
-                  <Link href={`/shop#${id}`} className={`mt-auto ${best ? "btn-primary" : "btn-outline"}`}>
-                    choose {plan.name.toLowerCase()}
+                  <Link href={`/shop#${id}`} className={`mt-auto text-center ${best ? "btn-primary" : "btn-outline"}`}>
+                    {plan.cta}
                   </Link>
                   <GuaranteeBadge className="mt-3 !text-xs" />
                 </div>
