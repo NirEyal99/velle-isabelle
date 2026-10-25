@@ -86,10 +86,10 @@ const cart = (...items: CartItem[]) => items;
   assert.equal(after.shippingCents, 0);
 }
 
-// Trial kit: $39 → $29.25 during launch, under $50 so it pays shipping.
+// Trial kit: $42 → $31.50 during launch, under $50 so it pays shipping.
 {
   const t = computeCart(cart({ kind: "plan", id: "trial-kit", qty: 1 }), on);
-  assert.equal(t.totalCents, 2925 + 595);
+  assert.equal(t.totalCents, 3150 + 595);
 }
 
 // Welcome gift is added once there's something in the cart.

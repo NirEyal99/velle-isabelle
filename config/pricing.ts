@@ -47,7 +47,7 @@ export const plans = {
     id: "trial-kit",
     name: "Trial Kit",
     kind: "one-time",
-    price: 39,
+    price: 42,
     tagline: "minis of all three, for a first try.",
     includes: ["mini scalp serum", "mini hydrating shampoo", "mini nourishing conditioner"],
     freeShipping: false,
