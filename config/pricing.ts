@@ -17,19 +17,19 @@ export const products = {
   serum: {
     id: "serum",
     name: "Scalp Serum",
-    price: 38,
+    price: 34,
     size: "30 ml / 1 fl oz",
   },
   shampoo: {
     id: "shampoo",
     name: "Hydrating Shampoo",
-    price: 26,
+    price: 29,
     size: "250 ml / 8.4 fl oz",
   },
   conditioner: {
     id: "conditioner",
     name: "Nourishing Conditioner",
-    price: 28,
+    price: 29,
     size: "200 ml / 6.8 fl oz",
   },
 } as const satisfies Record<ProductId, { id: ProductId; name: string; price: number; size: string }>;

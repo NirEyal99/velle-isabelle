@@ -14,33 +14,33 @@ const cart = (...items: CartItem[]) => items;
   assert.equal(t.freeGifts.length, 0);
 }
 
-// One shampoo during launch: $26 − 25% = $19.50, under $50 so $5.95 shipping.
+// One shampoo during launch: $29 − 25% = $21.75, under $50 so $5.95 shipping.
 {
   const t = computeCart(cart({ kind: "product", id: "shampoo", qty: 1 }), on);
-  assert.equal(t.subtotalCents, 2600);
-  assert.equal(t.discountCents, 650);
+  assert.equal(t.subtotalCents, 2900);
+  assert.equal(t.discountCents, 725);
   assert.equal(t.shippingCents, 595);
-  assert.equal(t.totalCents, 1950 + 595);
+  assert.equal(t.totalCents, 2175 + 595);
   assert.equal(t.nextGift?.name, "Satin Scrunchie");
-  assert.equal(t.nextGift?.awayCents, 6000 - 1950);
+  assert.equal(t.nextGift?.awayCents, 6000 - 2175);
 }
 
 // Same cart after the launch: full price.
 {
   const t = computeCart(cart({ kind: "product", id: "shampoo", qty: 1 }), off);
   assert.equal(t.discountCents, 0);
-  assert.equal(t.totalCents, 2600 + 595);
+  assert.equal(t.totalCents, 2900 + 595);
 }
 
-// Shampoo + conditioner, no serum: suggest the serum. $54 − 25% = $40.50.
+// Shampoo + conditioner, no serum: suggest the serum. $58 − 25% = $43.50.
 {
   const t = computeCart(cart({ kind: "product", id: "shampoo", qty: 1 }, { kind: "product", id: "conditioner", qty: 1 }), on);
   assert.equal(t.suggestSerum, true);
-  assert.equal(t.afterDiscountCents, 4050);
+  assert.equal(t.afterDiscountCents, 4350);
   assert.equal(t.shippingCents, 595);
 }
 
-// Adding the serum removes the suggestion. $92 − 25% = $69: free shipping and the scrunchie.
+// Adding the serum ($34) removes the suggestion. $92 − 25% = $69: free shipping and the scrunchie.
 {
   const t = computeCart(
     cart({ kind: "product", id: "shampoo", qty: 1 }, { kind: "product", id: "conditioner", qty: 1 }, { kind: "product", id: "serum", qty: 1 }),
