@@ -54,10 +54,10 @@ const cart = (...items: CartItem[]) => items;
   assert.equal(t.nextGift?.awayCents, 10000 - 6900);
 }
 
-// The Ritual during launch: 25% off month 1 today ($39), always free shipping.
+// The Ritual during launch: $64 − 25% off month 1 = $48 today, always free shipping.
 {
   const t = computeCart(cart({ kind: "plan", id: "ritual", qty: 1 }), on);
-  assert.equal(t.totalCents, 3900);
+  assert.equal(t.totalCents, 4800);
   assert.equal(t.shippingCents, 0);
   assert.equal(t.hasSubscription, true);
   assert.match(t.lines[0].note ?? "", /month 2: 20% off/);

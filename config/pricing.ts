@@ -58,7 +58,7 @@ export const plans = {
     id: "ritual",
     name: "The Ritual",
     kind: "subscription",
-    price: 52,
+    price: 64,
     interval: "month",
     tagline: "the full-size trio, every month.",
     includes: ["full-size scalp serum", "full-size shampoo", "full-size conditioner", "free shipping, always", "skip, pause or cancel anytime"],

@@ -24,7 +24,7 @@ export function salePrice(dollars: number, launchActive: boolean): number {
   return launchActive ? applyPercentOff(cents, launch.percentOff) : cents;
 }
 
-/** Month-by-month intro prices for the subscription during the launch, e.g. [3900, 4160]. */
+/** Month-by-month intro prices for the subscription during the launch, e.g. [4800, 5120] for $64/month. */
 export function subscriptionIntroPrices(monthlyDollars: number, launchActive: boolean): number[] {
   if (!launchActive) return [];
   return launch.subscriptionMonthsPercentOff.map((p) => applyPercentOff(toCents(monthlyDollars), p));

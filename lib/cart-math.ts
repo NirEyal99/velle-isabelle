@@ -21,7 +21,7 @@ export type CartLine = {
   lineCents: number;
   /** Launch discount on this line (0 when the sale is over). */
   discountCents: number;
-  /** Short note under the line, e.g. "then $52/month". */
+  /** Short note under the line, e.g. "billed monthly. skip, pause or cancel anytime.". */
   note?: string;
   maxQty: number;
 };
