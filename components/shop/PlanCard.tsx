@@ -12,8 +12,8 @@ export function PlanCard({ id }: { id: PlanId }) {
   const best = plan.badge !== null;
   return (
     <article id={id} className={`flex scroll-mt-24 flex-col overflow-hidden rounded-[2rem] ${best ? "bg-cocoa text-cream" : "bg-cream"}`} aria-labelledby={`card-${id}`}>
-      <div className="relative aspect-[16/11]">
-        <Image src={img.src} alt={img.alt} fill placeholder="blur" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover object-[50%_60%]" />
+      <div className="relative aspect-[5/4]">
+        <Image src={img.src} alt={img.alt} fill placeholder="blur" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover" style={{ objectPosition: img.focus }} />
       </div>
       <div className="flex flex-1 flex-col p-6">
         <div className="flex flex-wrap items-center gap-2">

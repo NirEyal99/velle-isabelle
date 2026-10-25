@@ -32,8 +32,8 @@ export function Pricing() {
         {/* The two subscriptions, side by side. */}
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <article className="flex flex-col overflow-hidden rounded-[2rem] bg-cream" aria-labelledby="plan-ritual">
-            <div className="relative aspect-[16/11]">
-              <Image src={trio} alt="full-size velle scalp serum, hydrating shampoo and nourishing conditioner" fill placeholder="blur" sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_60%]" />
+            <div className="relative aspect-[5/4]">
+              <Image src={trio} alt="full-size velle scalp serum, hydrating shampoo and nourishing conditioner" fill placeholder="blur" sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_46%]" />
             </div>
             <div className="flex flex-1 flex-col p-7 md:p-9">
               <h3 id="plan-ritual" className="text-[1.9rem] leading-none font-extrabold tracking-[-0.04em]">{ritual.name}</h3>
@@ -46,8 +46,8 @@ export function Pricing() {
           </article>
 
           <article className="flex flex-col overflow-hidden rounded-[2rem] bg-cocoa text-cream" aria-labelledby="plan-glow">
-            <div className="relative aspect-[16/11]">
-              <Image src={gifts} alt="silk pillowcase, satin scrunchie and scalp massager in blush pink" fill placeholder="blur" sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_65%]" />
+            <div className="relative aspect-[5/4]">
+              <Image src={gifts} alt="silk pillowcase, satin scrunchie and scalp massager in blush pink" fill placeholder="blur" sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_70%]" />
             </div>
             <div className="flex flex-1 flex-col p-7 md:p-9">
               <div className="flex flex-wrap items-center gap-3">

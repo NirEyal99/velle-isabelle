@@ -16,7 +16,7 @@ export function QuizCta() {
           </Link>
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-blush">
-          <Image src={trio} alt="velle scalp serum, hydrating shampoo and nourishing conditioner" fill placeholder="blur" sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_65%]" />
+          <Image src={trio} alt="velle scalp serum, hydrating shampoo and nourishing conditioner" fill placeholder="blur" sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_46%]" />
         </div>
       </div>
     </section>
