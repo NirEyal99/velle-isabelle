@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Brand colors and fonts. These become Tailwind classes like bg-blush, text-cocoa. */
+@theme {
+  --color-blush: #e9cfc6;
+  --color-oat: #efe7de;
+  --color-cream: #f7f2ec;
+  --color-latte: #cbb8a4;
+  --color-clay: #b88a73;
+  /* Darker clay for small text, so it stays readable (meets contrast guidelines). */
+  --color-clay-ink: #8c5f4a;
+  --color-cocoa: #3b2b24;
+  /* Softer cocoa for secondary text, still readable on blush and cream. */
+  --color-cocoa-soft: #5e4d44;
+
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-cocoa);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cocoa);
+  outline-offset: 3px;
+}
+
+/* Reusable styles: pill buttons, page container, headings. */
+@utility btn {
+  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 text-[15px] font-medium transition-colors;
+}
+@utility btn-primary {
+  @apply btn bg-cocoa text-cream hover:bg-[#2a1e19];
+}
+@utility btn-outline {
+  @apply btn border border-cocoa text-cocoa hover:bg-cocoa hover:text-cream;
+}
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+}
+@utility eyebrow {
+  @apply text-xs font-semibold tracking-[0.18em] text-clay-ink uppercase;
+}
+@utility heading-xl {
+  @apply text-[2.6rem] leading-[1.02] font-medium tracking-tight md:text-6xl;
+}
+@utility heading-lg {
+  @apply text-3xl leading-tight font-medium tracking-tight md:text-[2.75rem];
+}
