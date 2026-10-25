@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Hero } from "@/components/home/Hero";
 import { WelcomeBand } from "@/components/home/WelcomeBand";
+import { Pillars } from "@/components/home/Pillars";
 import { Ritual } from "@/components/home/Ritual";
 import { GlowJourney } from "@/components/home/GlowJourney";
 import { Ingredients } from "@/components/home/Ingredients";
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
       <Hero />
       <WelcomeBand />
+      <Pillars />
       <Ritual />
       <GlowJourney />
       <Ingredients />

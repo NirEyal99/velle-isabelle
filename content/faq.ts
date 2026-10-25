@@ -5,6 +5,10 @@ export const faqs = [
     a: "you'll feel the tingle and the softness from the first wash. for fuller-looking, glossier hair, give the routine a few months. everyone's hair is different, so results vary.",
   },
   {
+    q: "will velle make my hair grow?",
+    a: "velle is cosmetic hair care, so we don't make growth claims. what it does is keep your scalp feeling healthy and your strands conditioned, so there's less breakage and you keep more of your length. most people notice fuller-looking roots and better texture over time.",
+  },
+  {
     q: "is velle safe for color-treated hair?",
     a: "yep. the shampoo is sulfate-free and gentle, so it's kind to color. if your scalp is sensitive, do a quick patch test first, like with anything new.",
   },

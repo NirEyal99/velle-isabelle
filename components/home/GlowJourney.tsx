@@ -3,9 +3,9 @@ import Link from "next/link";
 import applying from "@/public/images/applying.jpg";
 
 const milestones = [
-  { n: "1", body: "you feel the tingle, and how clean your scalp is. hair is softer from the first wash." },
-  { n: "3", body: "visible shine, smoother ends and less breakage in your brush." },
-  { n: "6", body: "fuller-looking, bouncy hair, and a routine that's become a habit." },
+  { n: "1", body: "your scalp feels clean and awake. strands feel softer and smoother from the very first wash." },
+  { n: "3", body: "next-level texture: more shine, more slip, less frizz and less breakage in your brush." },
+  { n: "6", body: "fuller-looking, glossy hair with real flow, and lengths that stay long because they break less." },
 ];
 
 export function GlowJourney() {

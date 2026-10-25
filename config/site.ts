@@ -5,7 +5,7 @@ export const site = {
   name: "velle",
   tagline: "hair you can't stop touching.",
   description:
-    "clean, vegan scalp and hair care for a healthier-feeling scalp, fuller-looking hair and visible shine. scalp serum, hydrating shampoo and nourishing conditioner.",
+    "elite, scalp-first hair care for healthier-feeling hair with incredible texture, flow and shine. scalp serum, hydrating shampoo and nourishing conditioner. vegan and cruelty-free.",
   /** The live web address once the site is deployed (used for social sharing previews). */
   url: "https://velle.example",
   email: "hello@velle.example",

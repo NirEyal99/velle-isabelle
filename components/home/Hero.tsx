@@ -35,7 +35,7 @@ export function Hero() {
             touching.
           </h1>
           <p className="mt-6 max-w-[25rem] text-[17px] leading-relaxed">
-            a cooling scalp serum, a gentle shampoo and a silky conditioner. soft, shiny hair in about five minutes a day.
+            elite, scalp-first hair care for healthier-feeling hair with incredible texture, flow and shine. about five minutes a day.
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link href="/shop" className="btn-primary px-9">
