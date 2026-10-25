@@ -27,3 +27,22 @@ export function saveWelcomeSignup(email: string) {
 }
 
 export const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+const USED_KEY = "velle:welcome-used";
+
+/** The welcome gift is one per customer: after the first order that includes it, it's used. */
+export function welcomeGiftAvailable(): boolean {
+  try {
+    return getWelcomeSignup() !== null && localStorage.getItem(USED_KEY) === null;
+  } catch {
+    return false;
+  }
+}
+
+export function markWelcomeGiftUsed() {
+  try {
+    localStorage.setItem(USED_KEY, new Date().toISOString());
+  } catch {
+    // Storage blocked: nothing to remember.
+  }
+}

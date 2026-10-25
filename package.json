@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test:cart": "node --experimental-strip-types --no-warnings --import ./scripts/register-alias.mjs lib/cart-math.test.mts"
+    "test:cart": "node --experimental-strip-types --no-warnings --import ./scripts/register-alias.mjs lib/cart-math.test.mts",
+    "test:subscriptions": "node --experimental-strip-types --no-warnings --import ./scripts/register-alias.mjs lib/subscription.test.mts",
+    "test": "npm run -s test:cart && npm run -s test:subscriptions && npm run -s test:payments",
+    "test:payments": "node --experimental-strip-types --no-warnings --import ./scripts/register-alias.mjs lib/payments/demo.test.mts"
   },
   "dependencies": {
     "next": "16.4.3",

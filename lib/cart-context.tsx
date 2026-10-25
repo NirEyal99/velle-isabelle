@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { computeCart, lineKey, type CartItem, type CartTotals } from "@/lib/cart-math";
 import { useLaunch } from "@/lib/launch-context";
-import { getWelcomeSignup, WELCOME_EVENT } from "@/lib/welcome";
+import { WELCOME_EVENT, welcomeGiftAvailable } from "@/lib/welcome";
 
 const KEY = "velle:cart";
 
@@ -42,8 +42,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setItems(load());
     setLoaded(true);
-    setWelcomeGift(getWelcomeSignup() !== null);
-    const onWelcome = () => setWelcomeGift(true);
+    setWelcomeGift(welcomeGiftAvailable());
+    const onWelcome = () => setWelcomeGift(welcomeGiftAvailable());
     window.addEventListener(WELCOME_EVENT, onWelcome);
     return () => window.removeEventListener(WELCOME_EVENT, onWelcome);
   }, []);
@@ -76,7 +76,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const remove = useCallback((key: string) => setItems((prev) => prev.filter((i) => lineKey(i) !== key)), []);
-  const clear = useCallback(() => setItems([]), []);
+  const clear = useCallback(() => {
+    setItems([]);
+    setWelcomeGift(welcomeGiftAvailable());
+  }, []);
 
   const totals = useMemo(() => computeCart(items, { launchActive: active, welcomeGift }), [items, active, welcomeGift]);
 

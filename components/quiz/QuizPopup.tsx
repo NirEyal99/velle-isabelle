@@ -35,7 +35,9 @@ export function QuizPopup() {
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    if (pathname === "/quiz" || alreadySeen()) return;
+    // Not on the quiz page itself, and never interrupt checkout or the account pages.
+    const quiet = pathname === "/quiz" || pathname.startsWith("/checkout") || pathname.startsWith("/account");
+    if (quiet || alreadySeen()) return;
 
     const open = () => {
       if (alreadySeen() || !dialog.current || dialog.current.open) return;

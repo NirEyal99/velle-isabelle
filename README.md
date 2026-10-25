@@ -3,6 +3,8 @@
 The website for velle: _hair you can't stop touching._
 
 This is a **demo store**. Checkout and login use fake data and no real payments are taken.
+To pay at checkout, use the test card **4242 4242 4242 4242** with any future date and any 3 digits. To sign in, any email works.
+To take real payments later, see [STRIPE.md](STRIPE.md).
 
 ## Editing the site (no coding needed)
 
@@ -22,9 +24,9 @@ This is a **demo store**. Checkout and login use fake data and no real payments 
 2. In this folder, run `npm install` once.
 3. Run `npm run dev` and open http://localhost:3000.
 
-## Checking the cart math
+## Checking the math
 
-`npm run test:cart` checks every price rule (launch discount, free gifts, free shipping, the serum suggestion). Run it after changing prices or promotions.
+`npm test` checks every price rule (launch discount, free gifts, free shipping, the serum suggestion), the subscription rules (intro prices, skip, pause, resume, cancel) and the demo test cards. Run it after changing prices or promotions.
 
 ## Deploying
 
